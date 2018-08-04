@@ -47,9 +47,9 @@ func (v strint) String() string {
 }
 
 type Company struct {
-	Name             string `json:"CompanyName"`
-	CompanyNumber    string `json:"CompanyNumber"`
-	RegisteredOffice struct {
+	Name               string `json:"CompanyName"`
+	RegistrationNumber string `json:"CompanyNumber"`
+	RegisteredOffice   struct {
 		CareOf       string `json:"Careof"`
 		POBox        string `json:"POBox"`
 		AddressLine1 string `json:"AddressLine1"`
@@ -59,8 +59,8 @@ type Company struct {
 		Country      string `json:"Country"`
 		Postcode     string `json:"Postcode"`
 	} `json:"RegAddress"`
-	CompanyCategory   string `json:"CompanyCategory"`
-	CompantStatus     string `json:"CompanyStatus"`
+	Category          string `json:"CompanyCategory"`
+	Status            string `json:"CompanyStatus"`
 	CountryOfOrigin   string `json:"CountryofOrigin"`
 	IncorporationDate ChDate `json:"IncorporationDate"`
 	RegistrationDate  ChDate `json:"RegistrationDate"`
@@ -70,15 +70,15 @@ type Company struct {
 		CompanyName string
 	} `json:"PreviousName"`
 	Accounts struct {
-		AccountRefDay    strint `json:"AccountRefDay"`
-		AccountRefMonth  strint `json:"AccountRefMonth"`
-		NextDueDate      ChDate `json:"NextDueDate"`
-		LastMadeUpDate   ChDate `json:"LastMadeUpDate"`
-		AccountsCategory string `json:"AccountsCategory"`
+		AccountRefDay    strint  `json:"AccountRefDay"`
+		AccountRefMonth  strint  `json:"AccountRefMonth"`
+		NextDueDate      ChDate  `json:"NextDueDate"`
+		LastMadeUpDate   *ChDate `json:"LastMadeUpDate"`
+		AccountsCategory string  `json:"AccountsCategory"`
 	} `json:"Accounts"`
 	Returns struct {
-		NextDueDate    ChDate `json:"NextDueDate"`
-		LastMadeUpDate ChDate `json:"LastMadeUpDate"`
+		NextDueDate    ChDate  `json:"NextDueDate"`
+		LastMadeUpDate *ChDate `json:"LastMadeUpDate"`
 	} `json:"Returns"`
 	Mortgages struct {
 		Charges       strint `json:"NumMortCharges"`

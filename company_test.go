@@ -8,6 +8,7 @@ func TestGetCompany(t *testing.T) {
 		companyName   string
 	}{
 		{"05581537", "OPEN RIGHTS"},
+		{"11302912", "DISTRIBUTED, BLOCKCHAIN AND BUSINESS SOLUTIONS LTD"},
 	}
 
 	for _, tc := range tt {
