@@ -26,6 +26,14 @@ func (cd *ChDate) UnmarshalJSON(b []byte) (err error) {
 	return
 }
 
+// ToPointerToTime is a helper function to convert with *ChDate to *time.Time
+func ToPointerToTime(cd *ChDate) *time.Time {
+	if cd == nil {
+		return nil
+	}
+	return &cd.Time
+}
+
 type strint int
 
 func (v *strint) UnmarshalJSON(b []byte) error {
