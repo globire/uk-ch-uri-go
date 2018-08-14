@@ -67,25 +67,25 @@ type Company struct {
 		Country      string `json:"Country"`
 		Postcode     string `json:"Postcode"`
 	} `json:"RegAddress"`
-	Category          string `json:"CompanyCategory"`
-	Status            string `json:"CompanyStatus"`
-	CountryOfOrigin   string `json:"CountryofOrigin"`
-	IncorporationDate ChDate `json:"IncorporationDate"`
-	RegistrationDate  ChDate `json:"RegistrationDate"`
-	DissolutionDate   ChDate `json:"DissolutionDate"`
+	Category          string  `json:"CompanyCategory"`
+	Status            string  `json:"CompanyStatus"`
+	CountryOfOrigin   string  `json:"CountryofOrigin"`
+	IncorporationDate *ChDate `json:"IncorporationDate"`
+	RegistrationDate  *ChDate `json:"RegistrationDate"`
+	DissolutionDate   *ChDate `json:"DissolutionDate"`
 	PreviousNames     []struct {
 		CONDate     ChDate `json:"CONDate"`
 		CompanyName string
 	} `json:"PreviousName"`
 	Accounts struct {
-		AccountRefDay    strint  `json:"AccountRefDay"`
-		AccountRefMonth  strint  `json:"AccountRefMonth"`
-		NextDueDate      ChDate  `json:"NextDueDate"`
-		LastMadeUpDate   *ChDate `json:"LastMadeUpDate"`
-		AccountsCategory string  `json:"AccountsCategory"`
+		RefDay         strint  `json:"AccountRefDay"`
+		RefMonth       strint  `json:"AccountRefMonth"`
+		NextDueDate    *ChDate `json:"NextDueDate"`
+		LastMadeUpDate *ChDate `json:"LastMadeUpDate"`
+		Category       string  `json:"AccountsCategory"`
 	} `json:"Accounts"`
 	Returns struct {
-		NextDueDate    ChDate  `json:"NextDueDate"`
+		NextDueDate    *ChDate `json:"NextDueDate"`
 		LastMadeUpDate *ChDate `json:"LastMadeUpDate"`
 	} `json:"Returns"`
 	Mortgages struct {
