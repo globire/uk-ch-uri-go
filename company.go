@@ -22,7 +22,7 @@ func (cd *ChDate) UnmarshalJSON(b []byte) (err error) {
 	if len(s) == 0 {
 		return
 	}
-	cd.Time, err = time.Parse("02/01/2006", s)
+	cd.Time, err = time.Parse("02\\/01\\/2006", s)
 	return
 }
 
